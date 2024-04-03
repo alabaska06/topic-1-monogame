@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
+using System.Collections.Generic;
 
 namespace topic_1_monogame
 {
@@ -8,6 +10,7 @@ namespace topic_1_monogame
     {
         Texture2D starsTexture;
         Texture2D purplespaceTexture;
+        Texture2D spaceplanetsTexture;
         Texture2D planetTexture;
         Texture2D deathstarsTexture;
         Texture2D deathbeamTexture;
@@ -25,6 +28,7 @@ namespace topic_1_monogame
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
+
         }
 
         protected override void Initialize()
@@ -39,6 +43,7 @@ namespace topic_1_monogame
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             starsTexture = Content.Load<Texture2D>("stars");
             purplespaceTexture = Content.Load<Texture2D>("purplespace");
+            spaceplanetsTexture = Content.Load<Texture2D>("spaceplanets");
             planetTexture = Content.Load<Texture2D>("planet");
             deathstarsTexture = Content.Load<Texture2D>("deathstars");
             deathbeamTexture = Content.Load<Texture2D>("deathbeam");
@@ -68,6 +73,7 @@ namespace topic_1_monogame
 
             _spriteBatch.Begin();
             _spriteBatch.Draw(starsTexture, new Vector2(0, 0), Color.White);
+            _spriteBatch.Draw(spaceplanetsTexture, new Vector2(0, 0), Color.White);
             _spriteBatch.Draw(planetTexture, new Rectangle(150, 120, 300, 300), Color.White);
             _spriteBatch.Draw(deathstarsTexture, new Vector2(500, 25), Color.White);
             _spriteBatch.Draw(deathbeamTexture, new Vector2(255, 120), Color.White);
